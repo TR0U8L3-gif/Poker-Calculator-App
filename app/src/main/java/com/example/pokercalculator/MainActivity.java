@@ -9,7 +9,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import cards.*;
+import cards.Card;
+import cardsDealer.Dealer;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -77,6 +78,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             secondCardImage.setImageResource(resID);
 //            Toast.makeText(getApplicationContext(),("SC: "+color+symbol),Toast.LENGTH_LONG).show();
         }
+         String out = Integer.toString(Dealer.calculateBestPlay(firstCard,secondCard));
+        Toast.makeText(getApplicationContext(),out,Toast.LENGTH_LONG).show();
     }
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

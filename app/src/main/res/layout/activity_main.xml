@@ -34,6 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="first card"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -98,6 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="second card"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -163,12 +165,14 @@
             app:layout_constraintStart_toEndOf="@+id/constraintLayout5"
             app:layout_constraintTop_toTopOf="parent">
 
+
             <TextView
                 android:id="@+id/textView21"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:layout_marginTop="32dp"
                 android:text=" LATE GAME"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.506"
                 app:layout_constraintStart_toStartOf="parent"
@@ -180,6 +184,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="16dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
@@ -191,6 +196,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="16dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.506"
                 app:layout_constraintStart_toStartOf="parent"
@@ -202,6 +208,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="32dp"
                 android:text="MID GAME"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
@@ -213,6 +220,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="16dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
@@ -224,6 +232,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Someone call"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -234,6 +243,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="24dp"
                 android:text="EARLY GAME"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -244,6 +254,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="32dp"
                 android:text="BLIND"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/callLate" />
@@ -254,6 +265,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="16dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView30" />
@@ -277,6 +289,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="24dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
@@ -292,7 +305,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/foldMid" />
 
             <Space
-                android:id="@+id/space3"
+                android:id="@+id/space9"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -306,6 +319,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="24dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.506"
                 app:layout_constraintStart_toStartOf="parent"
@@ -326,6 +340,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="24dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.506"
                 app:layout_constraintStart_toStartOf="parent"
@@ -337,6 +352,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Everyone fold"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -363,6 +379,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="24dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/space7" />
@@ -393,6 +410,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="24dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.506"
                 app:layout_constraintStart_toStartOf="parent"
@@ -404,6 +422,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="24dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
@@ -424,6 +443,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="24dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.506"
                 app:layout_constraintStart_toStartOf="parent"
@@ -435,6 +455,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Raise once"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -462,6 +483,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="24dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/space8" />

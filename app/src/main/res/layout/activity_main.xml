@@ -39,7 +39,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/firstCardSymbol"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
@@ -51,7 +51,7 @@
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Spinner
-                android:id="@+id/spinner3"
+                android:id="@+id/firstCardColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
@@ -60,22 +60,24 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinner" />
+                app:layout_constraintTop_toBottomOf="@+id/firstCardSymbol" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/firstCardImage"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="8dp"
-                android:contentDescription="first card"
+                android:scaleType="fitCenter"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinner3"
-                tools:srcCompat="@drawable/ic_launcher_background" />
+                app:layout_constraintTop_toBottomOf="@+id/firstCardColor"
+                tools:srcCompat="@drawable/cq"
+                tools:visibility="visible" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -100,7 +102,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Spinner
-                android:id="@+id/spinner2"
+                android:id="@+id/secondCardSymbol"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
@@ -111,7 +113,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/secondCard" />
 
             <Spinner
-                android:id="@+id/spinner4"
+                android:id="@+id/secondCardColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
@@ -120,10 +122,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+                app:layout_constraintTop_toBottomOf="@+id/secondCardSymbol" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/secondCardImage"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginStart="4dp"
@@ -133,8 +135,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinner4"
-                tools:srcCompat="@drawable/ic_launcher_background" />
+                app:layout_constraintTop_toBottomOf="@+id/secondCardColor"
+                tools:srcCompat="@drawable/hk" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

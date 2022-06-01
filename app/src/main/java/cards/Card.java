@@ -3,8 +3,8 @@ package cards;
 import java.util.*;
 
 public class Card {
-    List<String> symbols = Arrays.asList("2","3","4","5","6","7","8","9","10","J","Q","K","A");
-    List<String> colors = Arrays.asList("D","C","H","S"); // diamonds clubs hearts spades
+    public List<String> symbols = Arrays.asList("2","3","4","5","6","7","8","9","10","J","Q","K","A");
+    public List<String> colors = Arrays.asList("C","H","S","D"); // diamonds clubs hearts spades
 
     private String symbol = "undefined";
     private String color = "undefined";

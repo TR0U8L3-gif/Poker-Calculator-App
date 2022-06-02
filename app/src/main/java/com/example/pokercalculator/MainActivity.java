@@ -10,6 +10,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Arrays;
+import java.util.List;
+
 import cards.Card;
 import cardsDealer.Dealer;
 
@@ -38,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     TextView foldBlind;
     TextView callBlind;
     TextView raiseBlind;
+
+    TextView bestPlay;
 
     Card firstCard = new Card(0,0);
     Card secondCard = new Card(0,0);
@@ -88,6 +93,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         foldBlind = (TextView) findViewById(R.id.foldBlind);
         callBlind = (TextView) findViewById(R.id.callBlind);
         raiseBlind = (TextView) findViewById(R.id.raiseBlind);
+
+        bestPlay = (TextView) findViewById(R.id.bestPlay);
     }
     private void changeCard(boolean card)
     {
@@ -121,6 +128,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         String raise = "Raise";
         String error = "Error";
 
+        List<String> options = Arrays.asList(
+                "Shit, just shit"
+                ,"Suited Connectors"
+                ,"Offsuit Face Cards"
+                ,"Suited Face Cards"
+                ,"Low Suited Aces"
+                ,"Middle Aces"
+                ,"High Aces"
+                ,"Low Pairs"
+                ,"Middle Pairs"
+                ,"High Pairs");
+        bestPlay.setText(options.get(option));
         if(option == 0)
         {
             foldEarly.setText(fold);

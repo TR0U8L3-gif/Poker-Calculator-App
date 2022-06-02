@@ -180,9 +180,11 @@
 
             <TextView
                 android:id="@+id/callLate"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/borderbottom"
+                android:gravity="center"
                 android:text="TextView"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -192,9 +194,11 @@
 
             <TextView
                 android:id="@+id/callMid"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/borderbottom"
+                android:gravity="center"
                 android:text="TextView"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -216,9 +220,11 @@
 
             <TextView
                 android:id="@+id/callEarly"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/borderbottom"
+                android:gravity="center"
                 android:text="TextView"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -261,9 +267,11 @@
 
             <TextView
                 android:id="@+id/callBlind"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/borderbottom"
+                android:gravity="center"
                 android:text="TextView"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -285,9 +293,11 @@
 
             <TextView
                 android:id="@+id/foldLate"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="24dp"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderbottom"
+                android:gravity="center"
                 android:text="TextView"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -315,9 +325,11 @@
 
             <TextView
                 android:id="@+id/foldMid"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="24dp"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderbottom"
+                android:gravity="center"
                 android:text="TextView"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -336,13 +348,15 @@
 
             <TextView
                 android:id="@+id/foldEarly"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="24dp"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="20dp"
+                android:autoText="false"
+                android:background="@drawable/borderbottom"
+                android:gravity="center"
                 android:text="TextView"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.506"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/space" />
 
@@ -375,9 +389,12 @@
 
             <TextView
                 android:id="@+id/foldBlind"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="24dp"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="20dp"
+                android:autoText="false"
+                android:background="@drawable/borderbottom"
+                android:gravity="center"
                 android:text="TextView"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -406,9 +423,11 @@
 
             <TextView
                 android:id="@+id/raiseMid"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="24dp"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderbottom"
+                android:gravity="center|top"
                 android:text="TextView"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -418,9 +437,11 @@
 
             <TextView
                 android:id="@+id/raiseLate"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="24dp"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderbottom"
+                android:gravity="center"
                 android:text="TextView"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -439,9 +460,11 @@
 
             <TextView
                 android:id="@+id/raiseEarly"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="24dp"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderbottom"
+                android:gravity="center"
                 android:text="TextView"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -479,9 +502,11 @@
 
             <TextView
                 android:id="@+id/raiseBlind"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="24dp"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderbottom"
+                android:gravity="center"
                 android:text="TextView"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -24,13 +24,14 @@ public class Card {
     public String getColor() {
         return color;
     }
+    public int getColorInt() { return colors.indexOf(color); }
 
     public void setColor(String color) {
         if(colors.contains(color)) this.color = color;
         else this.color = "undefined";
     }
 
-    public void  setColor(int color)
+    public void setColor(int color)
     {
         if(color >= 0 && color < colors.size()) this.color = colors.get(color);
         else this.color = "undefined";
@@ -39,6 +40,7 @@ public class Card {
     public String getSymbol() {
         return symbol;
     }
+    public int getSymbolInt() { return weight; }
 
     public void setSymbol(String symbol) {
         if(symbols.contains(symbol))

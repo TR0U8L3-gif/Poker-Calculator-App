@@ -1,11 +1,15 @@
 package com.example.pokercalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,8 +20,16 @@ import java.util.List;
 import cards.Card;
 import cardsDealer.Dealer;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener, SeekBar.OnSeekBarChangeListener{
 
+    Button buttonSpinner;
+    Button buttonSeekBar;
+
+    ConstraintLayout cardChooserSpinner;
+    ConstraintLayout cardChooserSeekBar;
+    boolean layout = false;
+
+//  cardChooserSpinner layout
     ImageView firstCardImage;
     ImageView secondCardImage;
 
@@ -26,6 +38,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Spinner secondCardSymbol;
     Spinner secondCardColor;
 
+//  cardChooserSpinner layout
+    ImageView firstCardImageSeekBar;
+    ImageView secondCardImageSeekBar;
+
+    SeekBar firstCardSymbolSeekBar;
+    SeekBar firstCardColorSeekBar;
+    SeekBar secondCardSymbolSeekBar;
+    SeekBar secondCardColorSeekBar;
+
+//  plays and stats table layout
     TextView foldEarly;
     TextView callEarly;
     TextView raiseEarly;
@@ -51,17 +73,37 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        menu
+        buttonSpinner = (Button) findViewById(R.id.buttonSpinner);
+        buttonSeekBar = (Button) findViewById(R.id.buttonSeekBar);
+
+        buttonSpinner.setAlpha((float) 1);
+        buttonSeekBar.setAlpha((float) 0.75);
+        layout = false;
+
+        buttonSpinner.setOnClickListener(this);
+        buttonSeekBar.setOnClickListener(this);
+
+//        layouts
+        cardChooserSpinner = (ConstraintLayout) findViewById(R.id.cardChooserSpinner);
+        cardChooserSeekBar = (ConstraintLayout) findViewById(R.id.cardChooserSeekBar);
+
+        cardChooserSpinner.setVisibility(View.VISIBLE);
+        cardChooserSeekBar.setVisibility(View.GONE);
+
 //        images
         firstCardImage = (ImageView) findViewById(R.id.firstCardImage);
         secondCardImage = (ImageView) findViewById(R.id.secondCardImage);
+
+        firstCardImageSeekBar = (ImageView) findViewById(R.id.firstCardImageSeekBar);
+        secondCardImageSeekBar = (ImageView) findViewById(R.id.secondCardImageSeekBar);
+
 //        spinners
         firstCardSymbol = (Spinner) findViewById(R.id.firstCardSymbol);
         firstCardColor = (Spinner) findViewById(R.id.firstCardColor);
         secondCardSymbol = (Spinner) findViewById(R.id.secondCardSymbol);
         secondCardColor = (Spinner) findViewById(R.id.secondCardColor);
-//        firstCardImage.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        firstCardImage.setImageResource(R.drawable.d2);
-        secondCardImage.setImageResource(R.drawable.dj);
+
 //        setting spinners values
         ArrayAdapter<CharSequence> symbols = ArrayAdapter.createFromResource(this, R.array.card_symbols, android.R.layout.simple_spinner_dropdown_item);
         ArrayAdapter<CharSequence> colors = ArrayAdapter.createFromResource(this, R.array.card_colors, android.R.layout.simple_spinner_dropdown_item);
@@ -77,6 +119,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         secondCardSymbol.setOnItemSelectedListener(this);
         firstCardColor.setOnItemSelectedListener(this);
         secondCardColor.setOnItemSelectedListener(this);
+//        seekbar
+         firstCardSymbolSeekBar = (SeekBar) findViewById(R.id.firstCardSymbolSeekBar);
+         firstCardColorSeekBar = (SeekBar) findViewById(R.id.firstCardColorSeekBar);
+         secondCardSymbolSeekBar = (SeekBar) findViewById(R.id.secondCardSymbolSeekBar);
+         secondCardColorSeekBar = (SeekBar) findViewById(R.id.secondCardColorSeekBar);
+
+        firstCardSymbolSeekBar.setOnSeekBarChangeListener(this);
+        firstCardColorSeekBar.setOnSeekBarChangeListener(this);
+        secondCardSymbolSeekBar.setOnSeekBarChangeListener(this);
+        secondCardColorSeekBar.setOnSeekBarChangeListener(this);
+
 //        text area
         foldEarly = (TextView) findViewById(R.id.foldEarly);
         callEarly = (TextView) findViewById(R.id.callEarly);
@@ -95,7 +148,27 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         raiseBlind = (TextView) findViewById(R.id.raiseBlind);
 
         bestPlay = (TextView) findViewById(R.id.bestPlay);
+
     }
+
+    private void changeMenu(int scene)
+    {
+        if(scene%2==0)
+        {
+            buttonSpinner.setAlpha((float) 1);
+            buttonSeekBar.setAlpha((float) 0.75);
+            cardChooserSpinner.setVisibility(View.VISIBLE);
+            cardChooserSeekBar.setVisibility(View.GONE);
+        }
+        else
+        {
+            buttonSeekBar.setAlpha((float) 1);
+            buttonSpinner.setAlpha((float) 0.75);
+            cardChooserSpinner.setVisibility(View.GONE);
+            cardChooserSeekBar.setVisibility(View.VISIBLE);
+        }
+    }
+
     private void changeCard(boolean card)
     {
         String symbol;
@@ -103,17 +176,40 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         if(!card)
         {
+            if(!layout)
+            {
+                firstCardSymbolSeekBar.setProgress(firstCard.getSymbolInt());
+                firstCardColorSeekBar.setProgress(firstCard.getColorInt());
+            }
+            else
+            {
+                firstCardSymbol.setSelection(firstCard.getSymbolInt());
+                firstCardColor.setSelection(firstCard.getColorInt());
+            }
+
             symbol = firstCard.getSymbol().toLowerCase();
             color = firstCard.getColor().toLowerCase();
             int resID = getResources().getIdentifier((color + symbol) , "drawable", getPackageName());
             firstCardImage.setImageResource(resID);
+            firstCardImageSeekBar.setImageResource(resID);
         }
         else
         {
+            if(!layout)
+            {
+                secondCardSymbolSeekBar.setProgress(secondCard.getSymbolInt());
+                secondCardColorSeekBar.setProgress(secondCard.getColorInt());
+            }
+            else
+            {
+                secondCardSymbol.setSelection(secondCard.getSymbolInt());
+                secondCardColor.setSelection(secondCard.getColorInt());
+            }
             symbol = secondCard.getSymbol().toLowerCase();
             color = secondCard.getColor().toLowerCase();
             int resID = getResources().getIdentifier((color + symbol) , "drawable", getPackageName());
             secondCardImage.setImageResource(resID);
+            secondCardImageSeekBar.setImageResource(resID);
         }
         changeText(Dealer.calculateBestPlay(firstCard,secondCard));
 //        String out = Integer.toString(Dealer.calculateBestPlay(firstCard,secondCard));
@@ -321,6 +417,24 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             raiseBlind.setText(error);
         }
     }
+
+//  button
+    @Override
+    public void onClick(View view) {
+        int itemId = view.getId();
+        if(itemId == R.id.buttonSpinner)
+        {
+            changeMenu(0);
+            layout = false;
+        }
+        if(itemId == R.id.buttonSeekBar)
+        {
+            changeMenu(1);
+            layout = true;
+        }
+    }
+
+//  spinner
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
@@ -351,5 +465,42 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
         Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_SHORT).show();
+    }
+
+//  seekBar
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        int itemId = seekBar.getId();
+
+        if(itemId == R.id.firstCardSymbolSeekBar)
+        {
+            firstCard.setSymbol(progress);
+            changeCard(false);
+        }
+        if(itemId == R.id.firstCardColorSeekBar)
+        {
+            firstCard.setColor(progress);
+            changeCard(false);
+        }
+        if(itemId == R.id.secondCardSymbolSeekBar)
+        {
+            secondCard.setSymbol(progress);
+            changeCard(true);
+        }
+        if(itemId == R.id.secondCardColorSeekBar)
+        {
+            secondCard.setColor(progress);
+            changeCard(true);
+        }
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
     }
 }
